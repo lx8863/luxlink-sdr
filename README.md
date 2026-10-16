@@ -73,12 +73,6 @@ $env:IIO_LIB_DIR = "C:\path\to\libiio"
 
 该目录应包含 `libiio.dll` 及匹配的运行依赖。
 
-## 应用图标
-
-采用深蓝底、青色无线电波、无文字图标。窗口及任务栏使用 `video_loopback/assets/app-icon.ico`，包含 16～256 像素共七种尺寸；高清原图为 `app-icon.png`。图标由内置 imagegen 工具生成，提示词见 `video_loopback/assets/icon-prompt.txt`。
-
-本机的 `LuxLink SDR.lnk` 使用同一图标，指向唯一 `.bat` 启动入口。Windows 批处理文件本身通常显示系统默认图标，可通过该快捷方式启动。快捷方式含本机绝对路径，已加入忽略规则，不应作为可移植文件提交 GitHub。
-
 ## 快速开始
 
 以下命令均在项目根目录执行。
