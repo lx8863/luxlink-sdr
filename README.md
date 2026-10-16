@@ -38,19 +38,34 @@
 ## 收发流程
 
 ```mermaid
-flowchart LR
-    A[原始 MP4] --> B[分包与 CRC]
-    B --> C[扰码与 64QAM 映射]
-    C --> D[训练符号 / OFDM IFFT / 循环前缀]
-    D --> E[AD936x TX]
-    E --> F[无线信道]
-    F --> G[AD936x RX / IQ 采集]
-    G --> H[同步与频偏补偿]
-    H --> I[去循环前缀 / FFT]
-    I --> J[信道估计 / 均衡 / 导频校正]
-    J --> K[解映射 / 解扰 / CRC 与包序号检查]
-    K --> L[写入接收文件]
-    L --> M[视频解码与播放]
+flowchart TB
+    subgraph TX["发送链 TX"]
+        direction TB
+        A["原始 MP4"] --> B["分包与 CRC"]
+        B --> C["扰码与 64QAM 映射"]
+        C --> D["训练符号 / OFDM IFFT / 循环前缀"]
+        D --> E["AD936x TX"]
+    end
+
+    E --> F["无线信道"]
+    F --> G
+
+    subgraph RX["接收链 RX"]
+        direction TB
+        G["AD936x RX / IQ 采集"] --> H["同步与频偏补偿"]
+        H --> I["去循环前缀 / FFT"]
+        I --> J["信道估计 / 均衡 / 导频校正"]
+        J --> K["解映射 / 解扰 / CRC 与包序号检查"]
+        K --> L["写入接收文件"]
+        L --> M["视频解码与播放"]
+    end
+
+    classDef transmit fill:#e6f7ff,stroke:#168bbf,color:#07334a;
+    classDef receive fill:#e9fbef,stroke:#26905a,color:#123e29;
+    classDef channel fill:#fff3d6,stroke:#d69b21,color:#593c08;
+    class A,B,C,D,E transmit;
+    class G,H,I,J,K,L,M receive;
+    class F channel;
 ```
 
 缺包时，同板收发程序根据已收到的包选择性重发。这里的重传由同一个主机进程协调，**不表示已经实现独立接收端通过空口回传 ACK**。
@@ -266,3 +281,13 @@ Windows-VS-2022-x64/    Windows libiio 工具与依赖
 - [原画质实时吞吐优化](原画质实时吞吐优化.md)
 - [OFDM CSI 说明](OFDM-CSI说明.md)
 - [信道采集说明](CHANNEL-SENSING.md)
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=lx8863%2Fluxlink-sdr&amp;type=date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=lx8863/luxlink-sdr&amp;type=Date&amp;theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=lx8863/luxlink-sdr&amp;type=Date" />
+    <img alt="LuxLink SDR Star History" src="https://api.star-history.com/svg?repos=lx8863/luxlink-sdr&amp;type=Date" />
+  </picture>
+</a>
