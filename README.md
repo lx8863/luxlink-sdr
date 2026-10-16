@@ -94,6 +94,12 @@ $env:IIO_LIB_DIR = "C:\path\to\libiio"
 
 以下命令均在项目根目录执行。
 
+### Windows EXE（无需安装 Python）
+
+从 [最新 Release](https://github.com/lx8863/luxlink-sdr/releases/latest) 下载 Windows x64 便携包，解压后双击 `LuxLink-SDR.exe`。程序自带 Python 和运行依赖；射频设备驱动仍需安装，视频素材需自行选择。构建、输出目录与验证方法见 [Windows EXE 说明](docs/WINDOWS-EXE.md)。
+
+以下步骤适用于从源码运行。
+
 ### 1. 启动上位机
 
 双击或执行：

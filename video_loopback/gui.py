@@ -1433,7 +1433,7 @@ def main():
     app.ofdm_panel.reset(app._radio_settings(csi=args.auto_csi))
     app.tabs.select({'demo':app.demo_tab,'settings':app.controls,'channel':app.channel_tab}[args.page])
     if app.transport.get() == "original":
-        app.summary.set("原码流模式：不重编码、不降画质；实时能力取决于源码率和链路吞吐，推荐 run_original_realtime.bat 已测配置")
+        app.summary.set("原码流模式：不重编码、不降画质；实时能力取决于源码率和链路吞吐，当前预设为 1080p30 / 64QAM")
     root.mainloop()
 
 

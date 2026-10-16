@@ -3,6 +3,8 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+/build/
+/dist/
 
 # Machine-local shortcuts and generated measurements
 *.lnk

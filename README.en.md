@@ -94,6 +94,12 @@ The directory must contain `libiio.dll` and its matching runtime dependencies.
 
 Run all commands from the project root. **The application interface is currently Chinese; the language links switch the documentation only.**
 
+### Windows EXE (No Python Installation Required)
+
+Download the Windows x64 portable bundle from the [latest Release](https://github.com/lx8863/luxlink-sdr/releases/latest), extract it, and run `LuxLink-SDR.exe`. Python and runtime dependencies are bundled. Install the radio driver separately and select your own video. See [Windows EXE notes](docs/WINDOWS-EXE.md) for build instructions, output paths and validation.
+
+The following steps are for running from source.
+
 ### 1. Launch the GUI
 
 Double-click the launcher or run:
