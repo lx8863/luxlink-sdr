@@ -1,0 +1,25 @@
+# Python environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Machine-local shortcuts and generated measurements
+*.lnk
+*.log
+*.csv
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Keep example tools and source attribution, not local experiment output
+/examples/*
+!/examples/*.py
+!/examples/*SOURCE.md
+!/examples/README.md
+
+# Keep libiio runtime DLLs and the device discovery tool only
+/Windows-VS-2022-x64/*
+!/Windows-VS-2022-x64/*.dll
+!/Windows-VS-2022-x64/iio_info.exe
