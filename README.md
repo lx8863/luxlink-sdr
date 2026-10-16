@@ -1,5 +1,7 @@
 # LuxLink SDR视频无线传输系统
 
+**简体中文** | [English](README.en.md)
+
 基于 Python、Tkinter 和 AD936x/libiio 的视频自发自收实验项目。支持原始 MP4 码流透传、OFDM 调制解调、CRC 校验与缺包重传，并在上位机中同步显示发送视频、接收视频和接收诊断图。
 
 **当前默认：1080p 素材、64QAM、3 MSPS、1024 点 FFT、原码流传输。唯一批处理入口为 `run_1080p30_64qam.bat`。**
